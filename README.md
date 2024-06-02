@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @SilverPhoenix57575
+- 👋 Hi, I’m debiprasad
 - 👀 I’m interested in Computer Science
 - 🌱 I’m currently learning DSA 
 - 💞️ I’m looking to collaborate on begginers level of projects
