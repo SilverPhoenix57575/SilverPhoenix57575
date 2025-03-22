@@ -1,0 +1,203 @@
+<!-- search.html: Page displaying search results for wallpapers based on user query -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Head section: Contains metadata and links for the page -->
+    <meta charset="UTF-8" />
+    <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures responsive viewport -->
+    <title>Search Results - WallArtVault</title>
+    <!-- Page title for SEO and browser tab -->
+    <meta
+      name="description"
+      content="Search results for AI-generated wallpapers on WallArtVault. Find unique digital art backgrounds in categories like Anime, Minimalist, Nature, Gaming, Cyberpunk, Pixel Art, Dark, Fantasy, and Cars."
+    />
+    <!-- SEO description -->
+    <meta
+      name="keywords"
+      content="search wallpapers, AI-generated wallpapers, digital art search, anime, minimalist, nature, gaming, cyberpunk, pixel art, dark, fantasy, cars"
+    />
+    <!-- SEO keywords -->
+    <meta name="robots" content="index, follow" />
+    <!-- Allows search engines to index this page -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Links to the main CSS file for styling -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Imports Montserrat font from Google Fonts -->
+  </head>
+  <body>
+    <!-- Header section: Contains navigation and search bar for the search page -->
+    <header>
+      <nav>
+        <!-- Navigation bar: Provides links to main sections of the site -->
+        <div class="nav-left">
+          <a href="index.html">Wallpapers</a>
+          <!-- Link to home page -->
+          <a href="categories.html">Categories</a>
+          <!-- Link to categories page -->
+          <a href="pricing.html">Pricing</a>
+          <!-- Link to pricing page -->
+          <a href="#support">Support</a>
+          <!-- Placeholder link to support section -->
+          <a href="#about">About</a>
+          <!-- Placeholder link to about section -->
+        </div>
+        <div class="nav-right">
+          <a href="signin.html" class="sign-in">Sign In</a>
+          <!-- Link to sign-in page -->
+        </div>
+      </nav>
+      <div class="index-search-bar">
+        <!-- Changed: Search bar width increased via CSS (see styles.css) -->
+        <form action="search.html" method="GET" class="index-search-bar">
+          <!-- Search bar: Allows users to refine their search -->
+          <input
+            type="text"
+            name="query"
+            id="search-input"
+            placeholder="Search wallpapers..."
+            aria-label="Search wallpapers"
+            required
+          />
+        </form>
+      </div>
+    </header>
+    <main>
+      <!-- Main content section: Contains the search results -->
+      <section class="search-results">
+        <h2>Search Results for "<span id="search-query"></span>"</h2>
+        <!-- Displays the search query -->
+        <div id="results-grid" class="category-grid full-grid">
+          <!-- Results grid: Displays filtered wallpapers (populated by JavaScript) -->
+        </div>
+        <p id="no-results" style="display: none">
+          No results found for "<span id="no-results-query"></span>". Try a
+          different search term.
+        </p>
+        <!-- Message for no results -->
+      </section>
+    </main>
+    <footer>
+      <!-- Footer section: Contains links and copyright information -->
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <!-- Placeholder link to about section -->
+        <a href="pricing.html">Pricing</a>
+        <!-- Link to pricing page -->
+        <a href="#support">Support</a>
+        <!-- Placeholder link to support section -->
+        <a href="#terms">Terms</a>
+        <!-- Placeholder link to terms section -->
+        <a href="#privacy">Privacy</a>
+        <!-- Placeholder link to privacy section -->
+        <a href="#cookies">Cookies</a>
+        <!-- Placeholder link to cookies section -->
+      </div>
+      <p>© 2025 WallArtVault. All rights reserved.</p>
+      <!-- Copyright notice -->
+    </footer>
+    <script src="js/scripts.js"></script>
+    <!-- Links to the main JavaScript file for interactivity -->
+    <script>
+      // Inline script: Handles search functionality and displays results
+      const wallpapers = [
+        // Changed: Updated image sources to local paths
+        {
+          id: 1,
+          title: "Minimalist 1",
+          category: "Minimalist",
+          image: "images/minimalist-wallpaper-1.jpg",
+        },
+        {
+          id: 2,
+          title: "Nature 1",
+          category: "Nature",
+          image: "images/nature-wallpaper-1.jpg",
+        },
+        {
+          id: 3,
+          title: "Anime 1",
+          category: "Anime",
+          image: "images/anime-wallpaper-1.jpg",
+        },
+        {
+          id: 4,
+          title: "Gaming 1",
+          category: "Gaming",
+          image: "images/gaming-wallpaper-1.jpg",
+        },
+        {
+          id: 5,
+          title: "Cyberpunk 1",
+          category: "Cyberpunk",
+          image: "images/cyberpunk-wallpaper-1.jpg",
+        },
+        {
+          id: 6,
+          title: "Pixel Art 1",
+          category: "Pixel Art",
+          image: "images/pixel-art-wallpaper-1.jpg",
+        },
+        {
+          id: 7,
+          title: "Dark 1",
+          category: "Dark",
+          image: "images/dark-wallpaper-1.jpg",
+        },
+        {
+          id: 8,
+          title: "Fantasy 1",
+          category: "Fantasy",
+          image: "images/fantasy-wallpaper-1.jpg",
+        },
+        {
+          id: 9,
+          title: "Cars 1",
+          category: "Cars",
+          image: "images/cars-wallpaper-1.jpg",
+        },
+      ];
+
+      // Get the search query from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get("query")?.toLowerCase() || "";
+
+      // Display the search query in the page
+      document.getElementById("search-query").textContent = query;
+      document.getElementById("no-results-query").textContent = query;
+      document.getElementById("search-input").value = query; // Pre-fill the search bar
+
+      // Filter wallpapers based on the query (matches title or category)
+      const results = wallpapers.filter(
+        (wallpaper) =>
+          wallpaper.title.toLowerCase().includes(query) ||
+          wallpaper.category.toLowerCase().includes(query)
+      );
+
+      // Display the results
+      const resultsGrid = document.getElementById("results-grid");
+      const noResultsMessage = document.getElementById("no-results");
+
+      if (results.length > 0) {
+        results.forEach((wallpaper) => {
+          const item = document.createElement("a");
+          item.href = `download.html?id=${wallpaper.id}`; // Link to download page with wallpaper ID
+          item.className = "category-item";
+          // Changed: Added loading="lazy" to dynamically generated images
+          item.innerHTML = `
+                    <img src="${wallpaper.image}" alt="${wallpaper.title} wallpaper" loading="lazy">
+                    <div class="category-name">${wallpaper.title}</div>
+                `;
+          resultsGrid.appendChild(item);
+        });
+      } else {
+        noResultsMessage.style.display = "block"; // Show "no results" message
+      }
+    </script>
+  </body>
+</html>

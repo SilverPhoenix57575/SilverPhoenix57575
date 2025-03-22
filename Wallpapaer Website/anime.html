@@ -1,0 +1,213 @@
+<!-- anime.html: Page showcasing anime wallpapers with sorting and filtering options -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Head section: Contains metadata and links for the page -->
+    <meta charset="UTF-8" />
+    <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures responsive viewport -->
+    <title>Anime Wallpapers - WallArtVault</title>
+    <!-- Page title for SEO and browser tab -->
+    <meta
+      name="description"
+      content="Explore stunning AI-generated anime wallpapers at WallArtVault. Download characters and scenes from popular anime and fan art for free or premium."
+    />
+    <!-- SEO description -->
+    <meta
+      name="keywords"
+      content="anime wallpapers, AI-generated wallpapers, anime backgrounds, unique anime designs"
+    />
+    <!-- SEO keywords -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Links to the main CSS file for styling -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Imports Montserrat font from Google Fonts -->
+  </head>
+  <body>
+    <!-- Header section: Contains navigation for the anime page -->
+    <header>
+      <nav>
+        <!-- Navigation bar: Provides links to main sections of the site -->
+        <div class="nav-left">
+          <a href="index.html">Wallpapers</a>
+          <!-- Link to home page -->
+          <a href="categories.html">Categories</a>
+          <!-- Link to categories page -->
+          <a href="pricing.html">Pricing</a>
+          <!-- Link to pricing page -->
+          <a href="#support">Support</a>
+          <!-- Placeholder link to support section -->
+          <a href="#about">About</a>
+          <!-- Placeholder link to about section -->
+        </div>
+        <div class="nav-right">
+          <a href="signin.html" class="sign-in">Sign In</a>
+          <!-- Link to sign-in page -->
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Main content section: Contains anime wallpapers with controls -->
+      <section class="categories">
+        <h2>Anime Wallpapers</h2>
+        <!-- Section title -->
+        <div class="category-controls">
+          <!-- Category controls: Provides sorting, filtering, search, and device view options -->
+          <div class="sort-filter">
+            <label for="sort-by">Sort By:</label>
+            <!-- Label for sort dropdown -->
+            <select id="sort-by" aria-label="Sort anime wallpapers by">
+              <option value="popularity">Popularity</option>
+              <!-- Sort by popularity -->
+              <option value="rating">Rating</option>
+              <!-- Sort by rating -->
+              <option value="quality">Quality</option>
+              <!-- Sort by quality -->
+            </select>
+          </div>
+          <div class="sort-filter">
+            <label for="filters">Filters:</label>
+            <!-- Label for filter dropdown -->
+            <select id="filters" aria-label="Filter anime wallpapers">
+              <option value="">All</option>
+              <!-- Default filter option -->
+              <option value="free">Free</option>
+              <!-- Filter for free wallpapers -->
+              <option value="premium">Premium</option>
+              <!-- Filter for premium wallpapers -->
+            </select>
+          </div>
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search wallpapers..."
+              aria-label="Search anime wallpapers"
+            />
+            <!-- Search input for wallpapers -->
+          </div>
+          <div class="device-buttons">
+            <button class="device-btn" aria-label="Phone view">📱</button>
+            <!-- Button to switch to phone view -->
+            <button class="device-btn" aria-label="Desktop view">🖥️</button>
+            <!-- Button to switch to desktop view -->
+          </div>
+        </div>
+        <div class="category-grid full-grid">
+          <!-- Category grid: Displays anime wallpapers in a full grid layout -->
+          <!-- Reverted: Removed query parameters from links -->
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 1"
+            />
+            <div class="category-name">Anime 1</div>
+            <!-- Anime wallpaper name overlay -->
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 2"
+            />
+            <div class="category-name">Anime 2</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 3"
+            />
+            <div class="category-name">Anime 3</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 4"
+            />
+            <div class="category-name">Anime 4</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 5"
+            />
+            <div class="category-name">Anime 5</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 6"
+            />
+            <div class="category-name">Anime 6</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 7"
+            />
+            <div class="category-name">Anime 7</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 8"
+            />
+            <div class="category-name">Anime 8</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 9"
+            />
+            <div class="category-name">Anime 9</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 10"
+            />
+            <div class="category-name">Anime 10</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 11"
+            />
+            <div class="category-name">Anime 11</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/21477.png"
+              alt="Anime wallpaper 12"
+            />
+            <div class="category-name">Anime 12</div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- Footer section: Contains links and copyright information -->
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <!-- Placeholder link to about section -->
+        <a href="pricing.html">Pricing</a>
+        <!-- Link to pricing page -->
+        <a href="#support">Support</a>
+        <!-- Placeholder link to support section -->
+        <a href="#terms">Terms</a>
+        <!-- Placeholder link to terms section -->
+        <a href="#privacy">Privacy</a>
+        <!-- Placeholder link to privacy section -->
+        <a href="#cookies">Cookies</a>
+        <!-- Placeholder link to cookies section -->
+      </div>
+      <p>© 2025 WallArtVault. All rights reserved.</p>
+      <!-- Copyright notice -->
+    </footer>
+    <script src="js/scripts.js"></script>
+    <!-- Links to the main JavaScript file for interactivity -->
+  </body>
+</html>

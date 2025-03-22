@@ -1,0 +1,212 @@
+<!-- pixel-art.html: Page showcasing pixel art wallpapers with sorting and filtering options -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Head section: Contains metadata and links for the page -->
+    <meta charset="UTF-8" />
+    <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures responsive viewport -->
+    <title>Pixel Art Wallpapers - WallArtVault</title>
+    <!-- Page title for SEO and browser tab -->
+    <meta
+      name="description"
+      content="Explore stunning AI-generated pixel art wallpapers at WallArtVault. Download retro-style 8-bit and 16-bit art, pixelated landscapes, and game-inspired designs for free or premium."
+    />
+    <!-- SEO description -->
+    <meta
+      name="keywords"
+      content="pixel art wallpapers, AI-generated wallpapers, 8-bit art, 16-bit art, retro game designs"
+    />
+    <!-- SEO keywords -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Links to the main CSS file for styling -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Imports Montserrat font from Google Fonts -->
+  </head>
+  <body>
+    <!-- Header section: Contains navigation for the pixel art page -->
+    <header>
+      <nav>
+        <!-- Navigation bar: Provides links to main sections of the site -->
+        <div class="nav-left">
+          <a href="index.html">Wallpapers</a>
+          <!-- Link to home page -->
+          <a href="categories.html">Categories</a>
+          <!-- Link to categories page -->
+          <a href="pricing.html">Pricing</a>
+          <!-- Link to pricing page -->
+          <a href="#support">Support</a>
+          <!-- Placeholder link to support section -->
+          <a href="#about">About</a>
+          <!-- Placeholder link to about section -->
+        </div>
+        <div class="nav-right">
+          <a href="signin.html" class="sign-in">Sign In</a>
+          <!-- Link to sign-in page -->
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Main content section: Contains pixel art wallpapers with controls -->
+      <section class="categories">
+        <h2>Pixel Art Wallpapers</h2>
+        <!-- Section title -->
+        <div class="category-controls">
+          <!-- Category controls: Provides sorting, filtering, search, and device view options -->
+          <div class="sort-filter">
+            <label for="sort-by">Sort By:</label>
+            <!-- Label for sort dropdown -->
+            <select id="sort-by" aria-label="Sort pixel art wallpapers by">
+              <option value="popularity">Popularity</option>
+              <!-- Sort by popularity -->
+              <option value="rating">Rating</option>
+              <!-- Sort by rating -->
+              <option value="quality">Quality</option>
+              <!-- Sort by quality -->
+            </select>
+          </div>
+          <div class="sort-filter">
+            <label for="filters">Filters:</label>
+            <!-- Label for filter dropdown -->
+            <select id="filters" aria-label="Filter pixel art wallpapers">
+              <option value="">All</option>
+              <!-- Default filter option -->
+              <option value="free">Free</option>
+              <!-- Filter for free wallpapers -->
+              <option value="premium">Premium</option>
+              <!-- Filter for premium wallpapers -->
+            </select>
+          </div>
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search wallpapers..."
+              aria-label="Search pixel art wallpapers"
+            />
+            <!-- Search input for wallpapers -->
+          </div>
+          <div class="device-buttons">
+            <button class="device-btn" aria-label="Phone view">📱</button>
+            <!-- Button to switch to phone view -->
+            <button class="device-btn" aria-label="Desktop view">🖥️</button>
+            <!-- Button to switch to desktop view -->
+          </div>
+        </div>
+        <div class="category-grid full-grid">
+          <!-- Category grid: Displays pixel art wallpapers in a full grid layout -->
+          <!-- Changed: Updated to pixel art theme with local image paths -->
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-1.jpg"
+              alt="Pixel Art wallpaper 1"
+            />
+            <div class="category-name">Pixel Art 1</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-2.jpg"
+              alt="Pixel Art wallpaper 2"
+            />
+            <div class="category-name">Pixel Art 2</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-3.jpg"
+              alt="Pixel Art wallpaper 3"
+            />
+            <div class="category-name">Pixel Art 3</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-4.jpg"
+              alt="Pixel Art wallpaper 4"
+            />
+            <div class="category-name">Pixel Art 4</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-5.jpg"
+              alt="Pixel Art wallpaper 5"
+            />
+            <div class="category-name">Pixel Art 5</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-6.jpg"
+              alt="Pixel Art wallpaper 6"
+            />
+            <div class="category-name">Pixel Art 6</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-7.jpg"
+              alt="Pixel Art wallpaper 7"
+            />
+            <div class="category-name">Pixel Art 7</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-8.jpg"
+              alt="Pixel Art wallpaper 8"
+            />
+            <div class="category-name">Pixel Art 8</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-9.jpg"
+              alt="Pixel Art wallpaper 9"
+            />
+            <div class="category-name">Pixel Art 9</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-10.jpg"
+              alt="Pixel Art wallpaper 10"
+            />
+            <div class="category-name">Pixel Art 10</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-11.jpg"
+              alt="Pixel Art wallpaper 11"
+            />
+            <div class="category-name">Pixel Art 11</div>
+          </a>
+          <a href="download.html" class="category-item">
+            <img
+              src="images/pixel-art-wallpaper-12.jpg"
+              alt="Pixel Art wallpaper 12"
+            />
+            <div class="category-name">Pixel Art 12</div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- Footer section: Contains links and copyright information -->
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <!-- Placeholder link to about section -->
+        <a href="pricing.html">Pricing</a>
+        <!-- Link to pricing page -->
+        <a href="#support">Support</a>
+        <!-- Placeholder link to support section -->
+        <a href="#terms">Terms</a>
+        <!-- Placeholder link to terms section -->
+        <a href="#privacy">Privacy</a>
+        <!-- Placeholder link to privacy section -->
+        <a href="#cookies">Cookies</a>
+        <!-- Placeholder link to cookies section -->
+      </div>
+      <p>© 2025 WallArtVault. All rights reserved.</p>
+      <!-- Copyright notice -->
+    </footer>
+    <script src="js/scripts.js"></script>
+    <!-- Links to the main JavaScript file for interactivity -->
+  </body>
+</html>

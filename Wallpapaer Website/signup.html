@@ -1,0 +1,172 @@
+<!-- signup.html: Page for user registration with form and social login options -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Head section: Contains metadata and links for the page -->
+    <meta charset="UTF-8" />
+    <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures responsive viewport -->
+    <title>Sign Up - WallArtVault</title>
+    <!-- Page title for SEO and browser tab -->
+    <meta
+      name="description"
+      content="Sign up for WallArtVault to download AI-generated wallpapers – 5/month free or unlimited with premium."
+    />
+    <!-- SEO description -->
+    <meta
+      name="keywords"
+      content="AI-generated wallpapers sign up, digital art registration, free wallpaper account"
+    />
+    <!-- SEO keywords -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Links to the main CSS file for styling -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Imports Montserrat font from Google Fonts -->
+  </head>
+  <body>
+    <header>
+      <!-- Header section: Contains navigation for the sign-up page -->
+      <nav>
+        <!-- Navigation bar: Provides links to main sections of the site -->
+        <div class="nav-left">
+          <a href="index.html">Wallpapers</a>
+          <!-- Link to home page -->
+          <a href="index.html#categories">Categories</a>
+          <!-- Link to categories section on home page -->
+          <a href="pricing.html">Pricing</a>
+          <!-- Link to pricing page -->
+          <a href="index.html#support">Support</a>
+          <!-- Placeholder link to support section on home page -->
+          <a href="index.html#about">About</a>
+          <!-- Placeholder link to about section on home page -->
+        </div>
+        <div class="nav-right">
+          <a href="signin.html" class="sign-in">Sign In</a>
+          <!-- Link to sign-in page -->
+          <!-- Changed: Removed the Sign Up button from the header -->
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Main content section: Contains the sign-up form and social login options -->
+      <section class="auth-section">
+        <h2>Sign Up</h2>
+        <!-- Section title -->
+        <form class="auth-form">
+          <!-- Authentication form: Collects user details for registration -->
+          <div class="form-group">
+            <label for="signup-email">E-mail</label>
+            <!-- Label for email input -->
+            <input type="email" id="signup-email" name="email" required />
+            <!-- Email input field -->
+          </div>
+          <div class="form-group">
+            <label for="signup-username">Username</label>
+            <!-- Label for username input -->
+            <input type="text" id="signup-username" name="username" required />
+            <!-- Username input field -->
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <!-- Label for password input -->
+            <input
+              type="password"
+              id="signup-password"
+              name="password"
+              required
+            />
+            <!-- Password input field -->
+          </div>
+          <div class="form-group">
+            <label for="signup-repeat-password">Repeat Password</label>
+            <!-- Label for password confirmation -->
+            <input
+              type="password"
+              id="signup-repeat-password"
+              name="repeat-password"
+              required
+            />
+            <!-- Password confirmation input field -->
+          </div>
+          <div class="form-group">
+            <label>CAPTCHA</label>
+            <!-- Label for CAPTCHA -->
+            <div class="captcha-placeholder">CAPTCHA Box Placeholder</div>
+            <!-- Placeholder for CAPTCHA -->
+          </div>
+          <button type="submit" class="cta-btn">Sign Up</button>
+          <!-- Submit button for form -->
+        </form>
+        <p class="or-divider">Or</p>
+        <!-- Divider text for alternative sign-up options -->
+        <div class="social-buttons">
+          <!-- Social sign-up buttons: Options to sign up with Google or Apple -->
+          <button class="social-btn google-btn">Sign up with Google</button>
+          <button class="social-btn apple-btn">Sign up with Apple</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- Footer section: Contains links and copyright information -->
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <!-- Placeholder link to about section -->
+        <a href="pricing.html">Pricing</a>
+        <!-- Link to pricing page -->
+        <a href="#support">Support</a>
+        <!-- Placeholder link to support section -->
+        <a href="#terms">Terms</a>
+        <!-- Placeholder link to terms section -->
+        <a href="#privacy">Privacy</a>
+        <!-- Placeholder link to privacy section -->
+        <a href="#cookies">Cookies</a>
+        <!-- Placeholder link to cookies section -->
+      </div>
+      <p>© 2025 WallArtVault. All rights reserved.</p>
+      <!-- Copyright notice -->
+    </footer>
+    <script src="js/scripts.js"></script>
+    <!-- Links to the main JavaScript file for interactivity -->
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'92257759bdd71363',t:'MTc0MjMwODYyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+    <!-- Cloudflare security script for bot protection -->
+  </body>
+</html>

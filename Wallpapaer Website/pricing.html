@@ -1,0 +1,164 @@
+<!-- pricing.html: Page displaying pricing plans for WallArtVault -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Head section: Contains metadata and links for the page -->
+    <meta charset="UTF-8" />
+    <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures responsive viewport -->
+    <title>Pricing - WallArtVault</title>
+    <!-- Page title for SEO and browser tab -->
+    <meta
+      name="description"
+      content="Explore pricing for WallArtVault: 5 free AI-generated wallpapers/month or unlimited downloads with our premium plan."
+    />
+    <!-- SEO description -->
+    <meta
+      name="keywords"
+      content="AI-generated wallpaper pricing, free wallpaper downloads, premium digital art, FHD wallpapers, UHD wallpapers"
+    />
+    <!-- SEO keywords -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Links to the main CSS file for styling -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Imports Montserrat font from Google Fonts -->
+  </head>
+  <body>
+    <header>
+      <!-- Header section: Contains navigation for the pricing page -->
+      <nav>
+        <!-- Navigation bar: Provides links to main sections of the site -->
+        <div class="nav-left">
+          <a href="index.html">Wallpapers</a>
+          <!-- Link to home page -->
+          <a href="index.html#categories">Categories</a>
+          <!-- Link to categories section on home page -->
+          <a href="pricing.html">Pricing</a>
+          <!-- Link to current pricing page -->
+          <a href="index.html#support">Support</a>
+          <!-- Placeholder link to support section on home page -->
+          <a href="index.html#about">About</a>
+          <!-- Placeholder link to about section on home page -->
+        </div>
+        <div class="nav-right">
+          <a href="signin.html" class="sign-in">Sign In</a>
+          <!-- Link to sign-in page -->
+          <!-- Changed: Removed the Sign Up button from the header -->
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Main content section: Contains pricing plans -->
+      <section class="pricing-section">
+        <h2>Pricing Plans</h2>
+        <!-- Section title -->
+        <div class="pricing-container">
+          <!-- Pricing container: Holds the two pricing plan options -->
+          <div class="pricing">
+            <!-- Free Plan card: Details for the free pricing option -->
+            <h3>Free Plan</h3>
+            <!-- Plan title -->
+            <p>5 AI-generated wallpapers per month</p>
+            <!-- Plan description -->
+            <ul>
+              <li>HD, FHD, and UHD resolutions</li>
+              <!-- Feature of the plan -->
+              <li>Access to all categories</li>
+              <!-- Feature of the plan -->
+              <li>No subscription required</li>
+              <!-- Feature of the plan -->
+            </ul>
+            <p class="price">Free</p>
+            <!-- Price of the plan -->
+          </div>
+          <div class="pricing">
+            <!-- Premium Plan card: Details for the premium pricing option -->
+            <h3>Premium Plan</h3>
+            <!-- Plan title -->
+            <p>Unlimited AI-generated wallpapers</p>
+            <!-- Plan description -->
+            <ul>
+              <li>HD, FHD, and UHD resolutions</li>
+              <!-- Feature of the plan -->
+              <li>Priority access to new designs</li>
+              <!-- Feature of the plan -->
+              <li>Email support</li>
+              <!-- Feature of the plan -->
+            </ul>
+            <p class="price">$9.99/month</p>
+            <!-- Price of the plan -->
+            <button
+              class="cta-btn"
+              onclick="window.location.href='signup.html'"
+            >
+              Sign Up Now
+            </button>
+            <!-- Call-to-action button to sign up for premium -->
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- Footer section: Contains links and copyright information -->
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <!-- Placeholder link to about section -->
+        <a href="pricing.html">Pricing</a>
+        <!-- Link to current pricing page -->
+        <a href="#support">Support</a>
+        <!-- Placeholder link to support section -->
+        <a href="#terms">Terms</a>
+        <!-- Placeholder link to terms section -->
+        <a href="#privacy">Privacy</a>
+        <!-- Placeholder link to privacy section -->
+        <a href="#cookies">Cookies</a>
+        <!-- Placeholder link to cookies section -->
+      </div>
+      <p>© 2025 WallArtVault. All rights reserved.</p>
+      <!-- Copyright notice -->
+    </footer>
+    <script src="js/scripts.js"></script>
+    <!-- Links to the main JavaScript file for interactivity -->
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'92257759ad98bccc',t:'MTc0MjMwODYyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+    <!-- Cloudflare security script for bot protection -->
+  </body>
+</html>

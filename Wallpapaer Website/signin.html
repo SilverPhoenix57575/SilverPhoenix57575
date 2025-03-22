@@ -1,0 +1,131 @@
+<!-- signin.html: Page for user sign-in with form and social login options -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Head section: Contains metadata and links for the page -->
+    <meta charset="UTF-8" />
+    <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures responsive viewport -->
+    <title>Sign In - WallArtVault</title>
+    <!-- Page title for SEO and browser tab -->
+    <meta
+      name="description"
+      content="Sign in to WallArtVault to access premium AI-generated wallpapers and manage your account."
+    />
+    <!-- SEO description -->
+    <meta
+      name="keywords"
+      content="sign in, login, WallArtVault, AI-generated wallpapers"
+    />
+    <!-- SEO keywords -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Links to the main CSS file for styling -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Imports Montserrat font from Google Fonts -->
+  </head>
+  <body>
+    <!-- Header section: Contains navigation for the sign-in page -->
+    <header>
+      <nav>
+        <!-- Navigation bar: Provides links to main sections of the site -->
+        <div class="nav-left">
+          <a href="index.html">Wallpapers</a>
+          <!-- Link to home page -->
+          <a href="categories.html">Categories</a>
+          <!-- Link to categories page -->
+          <a href="pricing.html">Pricing</a>
+          <!-- Link to pricing page -->
+          <a href="#support">Support</a>
+          <!-- Placeholder link to support section -->
+          <a href="#about">About</a>
+          <!-- Placeholder link to about section -->
+        </div>
+        <div class="nav-right">
+          <a href="signin.html" class="sign-in">Sign In</a>
+          <!-- Link to sign-in page -->
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Main content section: Contains the sign-in form and social login options -->
+      <section class="auth-section">
+        <h2>Sign In</h2>
+        <!-- Section title -->
+        <form class="auth-form">
+          <!-- Authentication form: Collects email and password for sign-in -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <!-- Label for email input -->
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+            <!-- Email input field -->
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <!-- Label for password input -->
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+            <!-- Password input field -->
+          </div>
+          <div class="captcha-placeholder">CAPTCHA Placeholder</div>
+          <!-- Placeholder for CAPTCHA -->
+          <button type="submit" class="cta-btn">Sign In</button>
+          <!-- Submit button for form -->
+        </form>
+        <div class="or-divider">OR</div>
+        <!-- Divider text for alternative login options -->
+        <div class="social-buttons">
+          <!-- Social login buttons: Options to sign in with Google or Apple -->
+          <button
+            class="social-btn google-btn"
+            aria-label="Sign in with Google"
+          >
+            Sign in with Google
+          </button>
+          <button class="social-btn apple-btn" aria-label="Sign in with Apple">
+            Sign in with Apple
+          </button>
+        </div>
+        <p class="signup-prompt">
+          Don't have an account?
+          <a href="signup.html" class="signup-link">Sign up</a>
+        </p>
+        <!-- Prompt with link to sign-up page -->
+      </section>
+    </main>
+    <footer>
+      <!-- Footer section: Contains links and copyright information -->
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <!-- Placeholder link to about section -->
+        <a href="pricing.html">Pricing</a>
+        <!-- Link to pricing page -->
+        <a href="#support">Support</a>
+        <!-- Placeholder link to support section -->
+        <a href="#terms">Terms</a>
+        <!-- Placeholder link to terms section -->
+        <a href="#privacy">Privacy</a>
+        <!-- Placeholder link to privacy section -->
+        <a href="#cookies">Cookies</a>
+        <!-- Placeholder link to cookies section -->
+      </div>
+      <p>© 2025 WallArtVault. All rights reserved.</p>
+      <!-- Copyright notice -->
+    </footer>
+    <script src="js/scripts.js"></script>
+    <!-- Links to the main JavaScript file for interactivity -->
+  </body>
+</html>
