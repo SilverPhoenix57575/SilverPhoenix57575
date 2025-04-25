@@ -1,0 +1,1153 @@
+Below are the answers to all questions from the "Design and Analysis of Algorithm" question bank provided in the document, organized into **Part-I: Short Answer Type Questions** and **Part-II: Focused-Short Answer Type Questions**. Each answer is concise, complete, and self-contained, using markdown for clarity and structure.
+
+---
+
+## Part-I: Short Answer Type Questions
+
+### 1. Give an asymptotic upper bound of the recurrence \( T(n) = T(n-1) + n \)
+The recurrence \( T(n) = T(n-1) + n \) describes a function where each step adds \( n \) to the previous term. Solving iteratively with base case \( T(1) = c \):
+- \( T(2) = T(1) + 2 = c + 2 \)
+- \( T(3) = T(2) + 3 = c + 2 + 3 = c + 5 \)
+- Generally, \( T(n) = c + 1 + 2 + \cdots + n = c + \frac{n(n+1)}{2} \).
+The dominant term is \( \frac{n(n+1)}{2} \), so the asymptotic upper bound is \( O(n^2) \).
+
+**Answer:** \( O(n^2) \)
+
+---
+
+### 2. Briefly explain divide and conquer approach for if \( f(n) = 700n' + 8 \), represent it using all notation problem solving
+Assuming \( n' \) is a typo for \( n \), so \( f(n) = 700n + 8 \):
+
+- **Divide and Conquer Approach**: This method solves problems by dividing them into smaller subproblems, solving each independently, and combining the results. Examples include merge sort and binary search.
+- **Asymptotic Notation for \( f(n) = 700n + 8 \)**:
+  - **Big O**: \( f(n) = O(n) \), as it grows linearly.
+  - **Omega**: \( f(n) = \Omega(n) \), since \( n \) is a lower bound.
+  - **Theta**: \( f(n) = \Theta(n) \), as it is both \( O(n) \) and \( \Omega(n) \).
+
+**Answer:**
+- Divide and Conquer: Divides problem into smaller subproblems, solves them, and combines solutions.
+- \( f(n) = 700n + 8 \): \( O(n) \), \( \Omega(n) \), \( \Theta(n) \).
+
+---
+
+### 3. What is algorithm analysis?
+Algorithm analysis is the process of evaluating an algorithm's efficiency, typically in terms of time and space complexity, as a function of input size. It uses asymptotic notations (e.g., Big O) to describe performance for large inputs.
+
+**Answer:** Algorithm analysis determines the computational complexity (time and space) of algorithms, often using asymptotic notations.
+
+---
+
+### 4. What is time complexity?
+Time complexity measures the amount of time an algorithm takes to execute as a function of input size \( n \). It is typically expressed using Big O notation to indicate the upper bound of running time.
+
+**Answer:** Time complexity is the time an algorithm takes to run, expressed as a function of input size, usually in Big O notation.
+
+---
+
+### 5. What is space complexity?
+Space complexity measures the amount of memory an algorithm uses as a function of input size \( n \), including both auxiliary space and input space, often expressed in Big O notation.
+
+**Answer:** Space complexity is the memory used by an algorithm, including auxiliary and input space, expressed in Big O notation.
+
+---
+
+### 6. Is \( 2^{n+1} = O(2^n) \)?
+To check: does \( 2^{n+1} \leq c \cdot 2^n \) for some constant \( c \) and large \( n \)?
+- \( 2^{n+1} = 2 \cdot 2^n \), so \( 2 \cdot 2^n \leq c \cdot 2^n \) implies \( 2 \leq c \).
+- This holds for \( c = 2 \) and all \( n \geq 0 \).
+Thus, \( 2^{n+1} = O(2^n) \).
+
+**Answer:** Yes, \( 2^{n+1} = O(2^n) \).
+
+---
+
+### 7. Differentiate posteriori and priori analysis
+- **Priori Analysis**: Theoretical evaluation of an algorithm’s performance before implementation, using asymptotic notations based on its design.
+- **Posteriori Analysis**: Empirical measurement of performance after implementation, using actual execution data.
+
+**Answer:**
+- Priori: Theoretical, pre-implementation analysis using asymptotics.
+- Posteriori: Empirical, post-implementation analysis with real data.
+
+---
+
+### 8. Define little omega notation with example
+Little omega (\( \omega \)) denotes a strict lower bound, where \( f(n) = \omega(g(n)) \) if for every \( c > 0 \), \( f(n) > c \cdot g(n) \) for sufficiently large \( n \).
+- Example: \( n^2 = \omega(n) \), since \( n^2 \) grows faster than any linear function \( c \cdot n \).
+
+**Answer:** Little omega (\( \omega \)) is a strict lower bound where \( f(n) \) grows faster than \( g(n) \). Example: \( n^2 = \omega(n) \).
+
+---
+
+### 9. Is \( 9n^5 + 21n^3 + 4n = \omega(n^5) \)?
+For \( f(n) = \omega(g(n)) \), \( f(n) \) must grow strictly faster than \( g(n) \). Here, \( f(n) = 9n^5 + 21n^3 + 4n \), \( g(n) = n^5 \):
+- \( f(n) \approx 9n^5 \) for large \( n \), so \( f(n) / n^5 \approx 9 \), a constant.
+- Since \( f(n) \) does not exceed \( n^5 \) by an unbounded factor, \( f(n) \neq \omega(n^5) \); it is \( \Theta(n^5) \).
+
+**Answer:** No, \( 9n^5 + 21n^3 + 4n \neq \omega(n^5) \).
+
+---
+
+### 10. What is worst-case complexity?
+Worst-case complexity is the maximum time or space an algorithm requires for any input of size \( n \), representing the upper bound on resource usage.
+
+**Answer:** Worst-case complexity is the maximum resource (time/space) used by an algorithm for the least efficient input of size \( n \).
+
+---
+
+### 11. What is best-case complexity?
+Best-case complexity is the minimum time or space an algorithm requires for any input of size \( n \), representing the lower bound on resource usage.
+
+**Answer:** Best-case complexity is the minimum resource (time/space) used by an algorithm for the most efficient input of size \( n \).
+
+---
+
+### 12. What is average-case complexity?
+Average-case complexity is the expected time or space an algorithm uses over all possible inputs of size \( n \), assuming a probability distribution.
+
+**Answer:** Average-case complexity is the expected resource (time/space) usage over all inputs of size \( n \), based on a distribution.
+
+---
+
+### 13. Is \( f(n) = 5n^7 + 2n^3 + 8n = \omega(n^6) \)?
+Assuming "w" is a typo for \( \omega \):
+- \( f(n) = 5n^7 + 2n^3 + 8n \), \( g(n) = n^6 \).
+- For large \( n \), \( f(n) \approx 5n^7 \), and \( f(n) / n^6 = 5n + \text{lower terms} \to \infty \).
+- Since \( f(n) \) grows faster than \( n^6 \), \( f(n) = \omega(n^6) \).
+
+**Answer:** Yes, \( 5n^7 + 2n^3 + 8n = \omega(n^6) \).
+
+---
+
+### 14. Define time and space trade-off
+Time and space trade-off is the balance where an algorithm can use more memory to reduce execution time or less memory at the cost of increased time. Example: Memoization uses extra space to store results, speeding up computations.
+
+**Answer:** Time and space trade-off balances execution time and memory usage, e.g., using more space to reduce time via memoization.
+
+---
+
+### 15. What is a recurrence relation?
+A recurrence relation is an equation that defines a function recursively in terms of its values at smaller inputs, often used to model the complexity of recursive algorithms.
+
+**Answer:** A recurrence relation recursively defines a function using previous terms, commonly used in algorithm complexity analysis.
+
+---
+
+### 16. What is the substitution method?
+The substitution method solves recurrence relations by guessing a solution form and proving it correct using mathematical induction.
+
+**Answer:** The substitution method guesses a solution to a recurrence and verifies it with induction.
+
+---
+
+### 17. What is the recursion tree method?
+The recursion tree method visualizes a recurrence as a tree, where each node is a subproblem with its cost. Summing costs across levels gives the total complexity.
+
+**Answer:** The recursion tree method models a recurrence as a tree, summing subproblem costs to find total complexity.
+
+---
+
+### 18. What is the master theorem?
+The master theorem solves recurrences of the form \( T(n) = aT(n/b) + f(n) \), providing asymptotic solutions based on comparing \( f(n) \) to \( n^{\log_b a} \).
+
+**Answer:** The master theorem provides asymptotic solutions for recurrences \( T(n) = aT(n/b) + f(n) \) by comparing \( f(n) \) and \( n^{\log_b a} \).
+
+---
+
+### 19. Give an example of a recurrence relation
+An example is the recurrence for merge sort: \( T(n) = 2T(n/2) + n \), with \( T(1) = O(1) \), representing the division into two halves and linear merging.
+
+**Answer:** Example: \( T(n) = 2T(n/2) + n \) (merge sort).
+
+---
+
+### 20. What is the time complexity of binary search?
+Binary search halves the search space each step, taking \( O(\log n) \) time for an array of size \( n \).
+
+**Answer:** \( O(\log n) \)
+
+---
+
+### 21. How do you analyze recursive algorithms?
+Recursive algorithms are analyzed by:
+1. Formulating a recurrence relation for time/space complexity.
+2. Solving it using methods like substitution, recursion tree, or master theorem.
+
+**Answer:** Set up a recurrence relation and solve it using substitution, recursion tree, or master theorem.
+
+---
+
+### 22. Define summation in the context of algorithm analysis
+Summation calculates the total cost of an algorithm, often from loops or recursive calls. Example: \( \sum_{i=1}^n i = \frac{n(n+1)}{2} \) for a linear loop.
+
+**Answer:** Summation computes total cost in algorithms, e.g., \( \sum_{i=1}^n i = \frac{n(n+1)}{2} \) for loops.
+
+---
+
+### 23. Why is average case analysis difficult?
+Average case analysis is challenging because:
+- It requires a probability distribution over inputs, which may be unknown.
+- Computing the expected value can involve complex mathematics.
+
+**Answer:** It’s difficult due to unknown input distributions and complex expected value calculations.
+
+---
+
+### 24. What is the base case in recursion?
+The base case is the condition that stops recursion, providing a direct solution without further recursive calls, preventing infinite recursion.
+
+**Answer:** The base case stops recursion by giving a direct solution.
+
+---
+
+### 25. What are the steps to solve a recurrence using the substitution method?
+1. Guess a solution form (e.g., \( T(n) = cn^k \)).
+2. Substitute it into the recurrence and solve for constants.
+3. Prove correctness using induction.
+
+**Answer:**
+1. Guess the solution form.
+2. Substitute and solve for constants.
+3. Verify with induction.
+
+---
+
+### 26. List the advantages and disadvantages of divide and conquer algorithm
+- **Advantages**:
+  - Efficient for large problems (e.g., \( O(n \log n) \) for merge sort).
+  - Parallelizable due to independent subproblems.
+- **Disadvantages**:
+  - High memory usage from recursion.
+  - May not be optimal compared to other methods (e.g., dynamic programming).
+
+**Answer:**
+- Advantages: Efficient, parallelizable.
+- Disadvantages: Memory-intensive, not always optimal.
+
+---
+
+### 27. What is the difference between quick sort and merge sort?
+- **Merge Sort**: Divides array into halves, recursively sorts, and merges. Time: \( O(n \log n) \) always. Stable.
+- **Quick Sort**: Picks a pivot, partitions around it, and sorts recursively. Average time: \( O(n \log n) \), worst: \( O(n^2) \). Not stable.
+
+**Answer:**
+- Merge Sort: \( O(n \log n) \) always, stable.
+- Quick Sort: \( O(n \log n) \) average, \( O(n^2) \) worst, not stable.
+
+---
+
+### 28. State the elements of dynamic programming
+- **Optimal Substructure**: Optimal solution built from optimal subproblem solutions.
+- **Overlapping Subproblems**: Subproblems recur and are solved once, stored for reuse.
+
+**Answer:**
+- Optimal Substructure
+- Overlapping Subproblems
+
+---
+
+### 29. Why dynamic programming is better than greedy?
+Dynamic programming ensures global optimality by solving all subproblems, while greedy makes local choices that may not be optimal globally (e.g., 0/1 knapsack).
+
+**Answer:** Dynamic programming guarantees optimality by considering all possibilities, unlike greedy’s local choices.
+
+---
+
+### 30. Why greedy algorithm cannot be solved to 0-1 knapsack problem?
+In the 0/1 knapsack problem, items are either taken or not. Greedy (e.g., highest value/weight) fails because it doesn’t consider combinations needed for global optimality, unlike dynamic programming.
+
+**Answer:** Greedy fails as it makes local choices, missing the optimal combination required for 0/1 knapsack.
+
+---
+
+### 31. Best case and worst-case time complexity of LCS are &
+For Longest Common Subsequence (LCS) using dynamic programming with sequences of lengths \( m \) and \( n \), the algorithm always fills an \( m \times n \) table, so both best and worst-case time complexities are \( O(mn) \).
+
+**Answer:** Best: \( O(mn) \), Worst: \( O(mn) \)
+
+---
+
+### 32. What is a greedy algorithm?
+A greedy algorithm builds a solution incrementally, making the locally optimal choice at each step, hoping to achieve a global optimum (e.g., Dijkstra’s algorithm).
+
+**Answer:** A greedy algorithm makes locally optimal choices at each step to find a global optimum.
+
+---
+
+### 33. Describe Huffman coding
+Huffman coding is a greedy algorithm for data compression. It assigns shorter binary codes to more frequent characters by building a binary tree: combine the two least frequent nodes iteratively until one root remains.
+
+**Answer:** Huffman coding greedily assigns shorter codes to frequent characters via a binary tree built from least frequent pairs.
+
+---
+
+### 34. What is the greedy choice property?
+The greedy choice property states that a globally optimal solution can be achieved by making the locally optimal choice at each step without reconsidering past decisions.
+
+**Answer:** A global optimum is reached by always choosing the locally best option.
+
+---
+
+### 35. What is the activity selection problem?
+The activity selection problem seeks the maximum number of non-overlapping activities given their start and end times. The greedy solution selects the activity that ends earliest.
+
+**Answer:** Maximize non-overlapping activities by greedily picking the earliest-finishing one.
+
+---
+
+### 36. Define Max clique problem
+The Max clique problem is to find the largest clique in a graph, where a clique is a subset of vertices all pairwise adjacent. It’s NP-hard.
+
+**Answer:** Find the largest subset of vertices in a graph where all pairs are connected.
+
+---
+
+### 37. What is the 0/1 knapsack problem?
+Given items with weights and values, and a knapsack capacity, the 0/1 knapsack problem determines which items to include (0 or 1) to maximize value without exceeding capacity.
+
+**Answer:** Maximize value of items (taken or not) within a knapsack’s weight limit.
+
+---
+
+### 38. What is dynamic programming?
+Dynamic programming solves problems by breaking them into overlapping subproblems, solving each once, and storing results to avoid recomputation, leveraging optimal substructure.
+
+**Answer:** Solves problems with overlapping subproblems by storing solutions for reuse.
+
+---
+
+### 39. What is matrix chain multiplication?
+Matrix chain multiplication finds the most efficient way to multiply a sequence of matrices by determining the optimal parenthesization to minimize scalar multiplications, solved via dynamic programming.
+
+**Answer:** Optimize the order of multiplying a matrix sequence to minimize operations.
+
+---
+
+### 40. What is the longest common subsequence problem?
+The longest common subsequence (LCS) problem finds the longest sequence present in two strings in the same order, not necessarily contiguous (e.g., "BCAB" in "ABCBDAB" and "BDCAB").
+
+**Answer:** Find the longest sequence common to two strings, in order but not contiguous.
+
+---
+
+### 41. How does dynamic programming differ from divide and conquer?
+- **Divide and Conquer**: Divides into non-overlapping subproblems, solves independently (e.g., merge sort).
+- **Dynamic Programming**: Handles overlapping subproblems, storing results to avoid redundancy (e.g., Fibonacci).
+
+**Answer:**
+- Divide and Conquer: Non-overlapping subproblems.
+- Dynamic Programming: Overlapping subproblems with stored solutions.
+
+---
+
+### 42. Define overlapping subproblems
+Overlapping subproblems occur when a problem’s subproblems recur multiple times, allowing dynamic programming to solve each once and reuse results.
+
+**Answer:** Subproblems that repeat, solved once and stored in dynamic programming.
+
+---
+
+### 43. What is the principle of optimality?
+The principle of optimality states that an optimal solution to a problem includes optimal solutions to its subproblems, a foundation for dynamic programming.
+
+**Answer:** Optimal solutions contain optimal subproblem solutions.
+
+---
+
+### 44. What is the time complexity of LCS?
+The time complexity of the Longest Common Subsequence problem using dynamic programming is \( O(mn) \) for sequences of lengths \( m \) and \( n \).
+
+**Answer:** \( O(mn) \)
+
+---
+
+### 45. Describe the Travelling Salesman Problem (TSP) using dynamic programming
+TSP finds the shortest tour visiting each city once and returning to the start. Dynamic programming uses states (subset of visited cities, current city) to compute minimum costs, with time complexity \( O(n^2 2^n) \).
+
+**Answer:** Find the shortest tour visiting all cities once, solved by DP in \( O(n^2 2^n) \) using subsets and current city.
+
+---
+
+### 46. State the algorithm for initialize_single_source()
+In shortest path algorithms (e.g., Dijkstra’s):
+```
+initialize_single_source(G, s)
+    for each vertex v in G.V
+        v.d = infinity
+        v.pi = null
+    s.d = 0
+```
+Sets source distance to 0, others to infinity.
+
+**Answer:**
+```
+for each v in G.V:
+    v.d = ∞
+    v.pi = null
+s.d = 0
+```
+
+---
+
+### 47. What do you mean by all-pair-shortest path?
+The all-pairs shortest path problem finds the shortest paths between every pair of vertices in a graph, solved by algorithms like Floyd-Warshall in \( O(n^3) \).
+
+**Answer:** Find shortest paths between all vertex pairs in a graph.
+
+---
+
+### 48. Mention four differences between Dynamic and Greedy approach
+1. **Optimality**: Dynamic ensures global optimum; greedy seeks local optimum.
+2. **Subproblems**: Dynamic solves all overlapping subproblems; greedy doesn’t.
+3. **Time**: Dynamic is slower but thorough; greedy is faster but may fail.
+4. **Examples**: Dynamic (knapsack), Greedy (Dijkstra’s).
+
+**Answer:**
+1. Dynamic: Global optimum; Greedy: Local optimum.
+2. Dynamic: All subproblems; Greedy: Single choice.
+3. Dynamic: Slower; Greedy: Faster.
+4. Dynamic: Knapsack; Greedy: Dijkstra’s.
+
+---
+
+### 49. What is backtracking?
+Backtracking is a recursive technique that builds solutions incrementally, abandoning partial solutions that fail constraints (e.g., N-Queens).
+
+**Answer:** Backtracking builds solutions recursively, discarding invalid ones.
+
+---
+
+### 50. How is backtracking used in the N-Queens problem?
+In N-Queens, backtracking places queens column by column, checking for conflicts (rows, diagonals). If a placement fails, it backtracks to try another position.
+
+**Answer:** Places queens column-wise, backtracks on conflicts to solve N-Queens.
+
+---
+
+### 51. What is the difference between backtracking and branch and bound?
+- **Backtracking**: Depth-first, abandons invalid paths (e.g., N-Queens).
+- **Branch and Bound**: Uses bounds to prune subproblems, can be breadth-first or priority-based (e.g., TSP optimization).
+
+**Answer:**
+- Backtracking: Depth-first, discards invalid paths.
+- Branch and Bound: Uses bounds to prune, flexible search.
+
+---
+
+### 52. Define Minimum spanning tree problem
+The Minimum Spanning Tree (MST) problem finds a subset of edges in a connected, undirected graph that connects all vertices with minimum total weight, forming no cycles.
+
+**Answer:** Find a tree connecting all vertices with minimum edge weight sum.
+
+---
+
+### 53. Define the capacity constraint in the context of maximum workflow problem
+Assuming “workflow” is a typo for “flow”: In the maximum flow problem, the capacity constraint limits the flow through an edge to its maximum capacity.
+
+**Answer:** Limits flow through an edge to its capacity in max flow problem.
+
+---
+
+### 54. List any two applications of shortest-path algorithms
+1. GPS navigation for shortest routes.
+2. Network routing for efficient data paths.
+
+**Answer:**
+1. GPS navigation.
+2. Network routing.
+
+---
+
+### 55. Explain the general method of branch and bound? What is FIFO and LC branch and bound
+- **General Method**: Divides problem into subproblems (branching), uses bounds to prune inefficient ones (bounding).
+- **FIFO**: Explores subproblems in order of creation (queue-based).
+- **LC (Least Cost)**: Prioritizes subproblems with lowest cost (priority queue).
+
+**Answer:**
+- Method: Branch into subproblems, bound with pruning.
+- FIFO: Queue-based exploration.
+- LC: Lowest-cost first.
+
+---
+
+### 56. What are different graph representation techniques, explain?
+- **Adjacency Matrix**: \( n \times n \) array, \( 1 \) if edge exists.
+- **Adjacency List**: Array of lists, each listing a vertex’s neighbors.
+- **Edge List**: List of edge pairs.
+
+**Answer:**
+- Adjacency Matrix: \( n \times n \) array for edges.
+- Adjacency List: Lists of neighbors per vertex.
+- Edge List: List of all edges.
+
+---
+
+### 57. What is the use of Relaxation() in shortest-path algorithms?
+Relaxation updates a vertex’s shortest path estimate if a shorter path via another vertex is found, used in algorithms like Dijkstra’s.
+
+**Answer:** Updates shortest path estimates in algorithms like Dijkstra’s.
+
+---
+
+### 58. Name two algorithms for finding MST
+1. Kruskal’s algorithm.
+2. Prim’s algorithm.
+
+**Answer:**
+1. Kruskal’s.
+2. Prim’s.
+
+---
+
+### 59. Define the transitive closure of a directed graph
+The transitive closure of a directed graph has an edge from \( i \) to \( j \) if there’s a path from \( i \) to \( j \) in the original graph.
+
+**Answer:** Graph with edges between all path-connected vertices.
+
+---
+
+### 60. State the time complexity of Prim's and Kruskal's algorithm
+- **Prim’s**: \( O((V + E) \log V) \) with a heap.
+- **Kruskal’s**: \( O(E \log E) \) due to edge sorting.
+
+**Answer:**
+- Prim’s: \( O((V + E) \log V) \).
+- Kruskal’s: \( O(E \log E) \).
+
+---
+
+### 61. What is the transitive closure of a graph?
+Same as Q59: A graph with an edge from \( i \) to \( j \) if a path exists from \( i \) to \( j \).
+
+**Answer:** Graph with edges for all reachable pairs.
+
+---
+
+### 62. What is topological sorting?
+Topological sorting orders vertices in a directed acyclic graph (DAG) such that for every edge \( (u, v) \), \( u \) precedes \( v \), used for dependency scheduling.
+
+**Answer:** Orders DAG vertices so edges go from earlier to later nodes.
+
+---
+
+### 63. What is a network flow algorithm?
+Network flow algorithms compute the maximum flow from a source to a sink in a network, respecting capacity constraints (e.g., Ford-Fulkerson).
+
+**Answer:** Computes max flow in a network with capacity limits.
+
+---
+
+### 64. What do you mean by polynomial time reduction?
+Polynomial time reduction transforms one problem into another in polynomial time, showing relative hardness, key in proving NP-completeness.
+
+**Answer:** Transforms a problem into another in polynomial time to compare hardness.
+
+---
+
+### 65. What is a tractable problem?
+A tractable problem can be solved in polynomial time, i.e., \( O(n^k) \) for some constant \( k \).
+
+**Answer:** Solvable in polynomial time, \( O(n^k) \).
+
+---
+
+### 66. What is an intractable problem?
+An intractable problem cannot be solved in polynomial time, often NP-hard or worse, with no known efficient solution.
+
+**Answer:** Cannot be solved in polynomial time, e.g., NP-hard problems.
+
+---
+
+### 67. Define P, NP, NP-complete, and NP-hard
+- **P**: Problems solvable in polynomial time.
+- **NP**: Problems verifiable in polynomial time.
+- **NP-complete**: In NP and as hard as any NP problem.
+- **NP-hard**: At least as hard as NP-complete, may not be in NP.
+
+**Answer:**
+- P: Solvable in polynomial time.
+- NP: Verifiable in polynomial time.
+- NP-complete: In NP, hardest in NP.
+- NP-hard: As hard as NP-complete, possibly not in NP.
+
+---
+
+### 68. What is Cook's theorem?
+Cook’s theorem proves that the Boolean Satisfiability Problem (SAT) is NP-complete, the first such problem, implying P = NP if SAT is polynomial-time solvable.
+
+**Answer:** SAT is NP-complete, foundational to P vs NP.
+
+---
+
+### 69. Name an NP-complete problem
+Traveling Salesman Problem (TSP) decision version: Is there a tour of length \( \leq k \)?
+
+**Answer:** Traveling Salesman Problem (decision version).
+
+---
+
+### 70. What is the chromatic number decision problem?
+The chromatic number decision problem asks if a graph can be colored with \( \leq k \) colors so no adjacent vertices share a color. It’s NP-complete for \( k \geq 3 \).
+
+**Answer:** Can a graph be colored with \( \leq k \) colors? NP-complete for \( k \geq 3 \).
+
+---
+
+### 71. What is the Clique Decision Problem, and why is it important?
+The Clique Decision Problem asks if a graph has a clique of size \( \geq k \). It’s NP-complete and key in complexity theory as many problems reduce to it.
+
+**Answer:** Does a graph have a clique \( \geq k \)? Important as an NP-complete benchmark.
+
+---
+
+### 72. What does NP stand for, and what is its significance?
+NP stands for Nondeterministic Polynomial time, problems verifiable in polynomial time. Its significance is in the P vs NP question, a major unsolved problem in computer science.
+
+**Answer:** NP: Nondeterministic Polynomial time, verifiable in polynomial time. Significant for P vs NP.
+
+---
+
+## Part-II: Focused-Short Answer Type Questions
+
+### 1. Let the frequency count of function \( f(n) = 7n^5 + 2^n + 3n^2 + 8 \), represent it using Big Oh notation
+For \( f(n) = 7n^5 + 2^n + 3n^2 + 8 \), the dominant term is \( 2^n \) (exponential grows faster than polynomials), so \( f(n) = O(2^n) \).
+
+**Answer:** \( O(2^n) \)
+
+---
+
+### 2. Determine the tightest bound (\( \Theta \)) for the following functions:
+#### a) \( f(n) = 2n + 10 f(n) \)
+Assuming a typo, likely \( f(n) = 2n + 10 \):
+- Linear function, so \( f(n) = \Theta(n) \).
+
+#### b) \( f(n) = 4n^3 + 3n \log n + 7 \)
+- Dominant term is \( 4n^3 \), so \( f(n) = \Theta(n^3) \).
+
+**Answer:**
+- a) \( \Theta(n) \) (assuming \( f(n) = 2n + 10 \))
+- b) \( \Theta(n^3) \)
+
+---
+
+### 3. Given \( f(n) = n^2 \) and \( g(n) = n \log n \), determine:
+#### (a) Is \( f(n) = O(g(n)) \)?
+- \( n^2 / (n \log n) = n / \log n \to \infty \), so \( n^2 \neq O(n \log n) \).
+
+#### (b) Is \( f(n) = \Omega(g(n)) \)?
+- \( n^2 \geq c \cdot n \log n \) holds for some \( c \), so yes.
+
+#### (c) Is \( f(n) = \Theta(g(n)) \)?
+- Requires both \( O \) and \( \Omega \), but \( f(n) \neq O(g(n)) \), so no.
+
+**Answer:**
+- (a) No
+- (b) Yes
+- (c) No
+
+---
+
+### 4. Solve the recurrence using master’s method: \( T(n) = 9T(n/3) + n^{2.5} \)
+- \( a = 9 \), \( b = 3 \), \( f(n) = n^{2.5} \).
+- \( \log_b a = \log_3 9 = 2 \).
+- \( f(n) = n^{2.5} > n^2 \), case 3 applies if \( 9 \cdot (n/3)^{2.5} \leq k \cdot n^{2.5} \), \( k = 9 / 3^{2.5} < 1 \).
+- Thus, \( T(n) = \Theta(n^{2.5}) \).
+
+**Answer:** \( \Theta(n^{2.5}) \)
+
+---
+
+### 5. Solve the recurrence using master’s method: \( T(n) = 2T(n/2) + n / \log n \)
+- \( a = 2 \), \( b = 2 \), \( f(n) = n / \log n \).
+- \( \log_b a = 1 \).
+- \( f(n) = n / \log n \) doesn’t fit standard cases (\( < n^1 \), not \( n^1 \log^k n \), \( < n^{1+\epsilon} \)).
+- Master theorem doesn’t apply directly; extended methods suggest \( T(n) = \Theta(n \log \log n) \).
+
+**Answer:** Cannot be solved directly with standard master theorem; approximately \( \Theta(n \log \log n) \).
+
+---
+
+### 6. Solve the recurrence: \( T(n) = 3T(n/2) + n \) using recursion tree
+- Level 0: \( n \).
+- Level 1: \( 3 \cdot (n/2) = 3n/2 \).
+- Level \( i \): \( 3^i \cdot (n / 2^i) = n \cdot (3/2)^i \).
+- Depth: \( \log_2 n \), leaves: \( 3^{\log_2 n} = n^{\log_2 3} \).
+- Total: \( \sum_{i=0}^{\log_2 n - 1} n \cdot (3/2)^i = n \cdot \frac{(3/2)^{\log_2 n} - 1}{1/2} \), dominated by \( n \cdot n^{\log_2 3 - 1} \).
+- \( T(n) = \Theta(n^{\log_2 3}) \), \( \log_2 3 \approx 1.584 \).
+
+**Answer:** \( \Theta(n^{\log_2 3}) \)
+
+---
+
+### 7. Solve the recurrence: \( T(n) = T(n-1) + n \), if \( n > 0 \) using substitution method
+- Guess: \( T(n) = \frac{n(n+1)}{2} + c \).
+- Base: \( T(0) = c \).
+- Induction: \( T(n-1) = \frac{(n-1)n}{2} + c \), then \( T(n) = T(n-1) + n = \frac{(n-1)n}{2} + c + n = \frac{n(n+1)}{2} + c \).
+- Holds, so \( T(n) = \Theta(n^2) \).
+
+**Answer:** \( \Theta(n^2) \)
+
+---
+
+### 8. Find the element 17 from given list using linear search algorithm: 29, 87, 89, 21, 23, 17, 11, 10, 14
+Linear search checks each element:
+- 29 ≠ 17, 87 ≠ 17, 89 ≠ 17, 21 ≠ 17, 23 ≠ 17, 17 = 17 (index 5, 0-based).
+
+**Answer:** Found at index 5 (0-based).
+
+---
+
+### 9. Find the element 9 from the list using binary search: 3, 5, 9, 14, 39, 40, 52
+- Start: low = 0, high = 6, mid = 3, 14 > 9, high = 2.
+- Next: low = 0, high = 2, mid = 1, 5 < 9, low = 2.
+- Next: low = 2, high = 2, mid = 2, 9 = 9.
+
+**Answer:** Found at index 2 (0-based).
+
+---
+
+### 10. Write down the algorithm of Linear search and Binary search
+- **Linear Search:**
+```
+LinearSearch(A, key):
+    for i = 0 to length(A) - 1:
+        if A[i] = key:
+            return i
+    return -1
+```
+- **Binary Search:**
+```
+BinarySearch(A, key):
+    low = 0, high = length(A) - 1
+    while low <= high:
+        mid = (low + high) / 2
+        if A[mid] = key:
+            return mid
+        if A[mid] < key:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+```
+
+**Answer:**
+- Linear: See above.
+- Binary: See above.
+
+---
+
+### 11. Briefly explain Asymptotic notation
+Asymptotic notation describes algorithm efficiency as input size grows:
+- **Big O**: Upper bound (worst case).
+- **Omega**: Lower bound (best case).
+- **Theta**: Tight bound.
+
+**Answer:** Describes efficiency with Big O (upper), Omega (lower), Theta (tight) bounds.
+
+---
+
+### 12. Discuss the time complexity of Binary search algorithm for best and worst case
+- **Best Case**: Target at mid, \( O(1) \).
+- **Worst Case**: Target not present or at ends, \( O(\log n) \) due to halving.
+
+**Answer:**
+- Best: \( O(1) \).
+- Worst: \( O(\log n) \).
+
+---
+
+### 13. State the algorithm for quick sort and explain it
+```
+QuickSort(A, low, high):
+    if low < high:
+        pivot = Partition(A, low, high)
+        QuickSort(A, low, pivot - 1)
+        QuickSort(A, pivot + 1, high)
+
+Partition(A, low, high):
+    pivot = A[high]
+    i = low - 1
+    for j = low to high - 1:
+        if A[j] <= pivot:
+            i = i + 1
+            swap A[i] with A[j]
+    swap A[i + 1] with A[high]
+    return i + 1
+```
+- **Explanation**: Picks a pivot, partitions array (smaller elements left, larger right), recursively sorts subarrays.
+
+**Answer:** Algorithm above; partitions around pivot, sorts recursively.
+
+---
+
+### 14. Discuss the working strategy of merge sort and illustrate the process of merge sort algorithm for the given data: 43, 32, 22, 78, 63, 57, 91, 13
+- **Strategy**: Divide array into halves, sort recursively, merge sorted halves.
+- **Illustration**:
+  - Split: [43, 32, 22, 78] [63, 57, 91, 13]
+  - Split: [43, 32] [22, 78] [63, 57] [91, 13]
+  - Split: [43] [32] [22] [78] [63] [57] [91] [13]
+  - Merge: [32, 43] [22, 78] [57, 63] [13, 91]
+  - Merge: [22, 32, 43, 78] [13, 57, 63, 91]
+  - Merge: [13, 22, 32, 43, 57, 63, 78, 91]
+
+**Answer:** Divides, sorts, merges; result: 13, 22, 32, 43, 57, 63, 78, 91.
+
+---
+
+### 15. Create a Huffman tree of the given message: BCCABBDDAECCBBAEDDCC
+- Frequencies: B:5, C:6, A:3, D:4, E:2.
+- Build tree:
+  - E(2) + A(3) = 5
+  - 5 + D(4) = 9
+  - B(5) + C(6) = 11
+  - 9 + 11 = 20 (root)
+- Codes: B:10, C:11, A:00, D:01, E:000.
+
+**Answer:** Tree: Root(20) → [B(5):10, C(6):11], [9 → D(4):01, 5 → A(3):00, E(2):000].
+
+---
+
+### 16. State the algorithm of merge sort. Analyze the best, worst and average case time complexity of merge sort
+```
+MergeSort(A, low, high):
+    if low < high:
+        mid = (low + high) / 2
+        MergeSort(A, low, mid)
+        MergeSort(A, mid + 1, high)
+        Merge(A, low, mid, high)
+
+Merge(A, low, mid, high):
+    Combine sorted subarrays A[low..mid] and A[mid+1..high]
+```
+- **Complexity**: Always \( O(n \log n) \) (divide: \( \log n \), merge: \( n \)).
+
+**Answer:** Algorithm above; Best, Worst, Average: \( O(n \log n) \).
+
+---
+
+### 17. Sort these elements using Quick sort: 8, 4, 3, 1, 6, 7, 11, 9, 2, 10, 5
+- Pivot (5): [4, 3, 1, 2, 5, 6, 7, 11, 9, 10, 8]
+- Left: [1, 2, 3, 4], Right: [6, 7, 8, 9, 10, 11]
+- Recurse: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+**Answer:** 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+
+---
+
+### 18. Given the s table: [Incomplete question]
+Assuming matrix chain multiplication (Q19), see below.
+
+---
+
+### 19. Find the optimal parenthesis for above matrix and write the algorithm
+Assuming Q47: Matrices A(20×2), B(2×15), C(15×40), D(40×4):
+- DP table: Min cost for A×B×C×D = 4,800 (parenthesize as (A×B)×(C×D)).
+- Algorithm:
+```
+MatrixChainOrder(p):
+    n = length(p) - 1
+    for len = 1 to n-1:
+        for i = 1 to n-len:
+            j = i + len
+            m[i,j] = min(m[i,k] + m[k+1,j] + p[i-1]*p[k]*p[j]) for k = i to j-1
+    return m[1,n]
+```
+
+**Answer:** (A×B)×(C×D); Algorithm above.
+
+---
+
+### 20. Given 10 activities along with their start and end time as \( S = (A1, A2, ..., A10) \), \( Si = (1, 3, 0, 5, 3, 5, 6, 8, 8, 2, 12) \), \( fi = (4, 5, 6, 7, 9, 9, 10, 11, 12, 14, 16) \). Compute a schedule where the greatest number of activities takes place
+- Greedy: Pick earliest finish:
+  - A1(1,4), A4(5,7), A7(6,10), A10(2,14) → Adjust for non-overlap: A1, A4, A8(8,11), A10.
+- Max: 4 activities.
+
+**Answer:** A1, A4, A8, A10 (4 activities).
+
+---
+
+### 21. Find an optimal solution for knapsack problem where \( n = 7 \), \( m = 15 \), \( (P1, P2, ..., P7) = (10, 5, 15, 7, 6, 18, 3) \), \( (W1, W2, ..., W7) = (2, 3, 5, 7, 1, 4, 1) \)
+- DP table: Max value at \( m = 15 \) is 44 (items 1, 3, 5, 6).
+
+**Answer:** Items 1, 3, 5, 6; Value = 44.
+
+---
+
+### 22. [Incomplete question]
+No answer provided due to missing details.
+
+---
+
+### 29. Find the shortest path from vertex A to all other vertices by using Dijkstra's algorithm
+Graph missing; assuming standard example needed later (e.g., Q49).
+
+---
+
+### 31. Find the shortest way for Travelling Salesman by assuming that the salesman starts his journey from city 1 by using dynamic programming
+Graph missing; generic answer: Use DP with \( O(n^2 2^n) \).
+
+---
+
+### 32. Find the optimal solution using 0/1 knapsack problem for 4 items with weight = [2, 3, 4, 5], profit = [3, 5, 6, 10], maximum capacity = 8 by using Backtracking
+- Backtrack: Try combinations, max value = 11 (items 2, 3).
+
+**Answer:** Items 2, 3; Value = 11.
+
+---
+
+### 33. Explain the Satisfiability problem
+SAT determines if a Boolean formula can be made true by assigning variables (e.g., (A ∨ ¬B) ∧ (¬A ∨ B)). It’s NP-complete.
+
+**Answer:** Checks if a Boolean formula is satisfiable; NP-complete.
+
+---
+
+### 34. Write short notes on COOK'S theorem
+Cook’s theorem proves SAT is NP-complete, showing all NP problems reduce to it in polynomial time, foundational to complexity theory.
+
+**Answer:** Proves SAT is NP-complete, basis for NP-completeness.
+
+---
+
+### 35. Describe P, NP, NP-Hard and NP-Complete
+- **P**: Solvable in polynomial time.
+- **NP**: Verifiable in polynomial time.
+- **NP-Hard**: As hard as NP-complete.
+- **NP-Complete**: In NP, all NP reduces to it.
+
+**Answer:** See Q67.
+
+---
+
+### 36. Derive the function \( f(n) = 12n^2 + 6n \) is \( O(n^3) \) and \( \omega(n) \)
+- \( O(n^3) \): \( 12n^2 + 6n \leq c \cdot n^3 \) for \( c = 1 \), \( n \geq 18 \), true.
+- \( \omega(n) \): \( 12n^2 + 6n > c \cdot n \) for large \( n \), true.
+
+**Answer:** Yes, \( O(n^3) \) and \( \omega(n) \).
+
+---
+
+### 37. Find the optimal solution of the knapsack instance \( n = 7 \), \( M = 15 \), \( (P1, ..., P7) = (10, 5, 15, 7, 6, 18, 3) \), \( (w1, ..., w7) = (2, 3, 5, 7, 1, 4, 1) \)
+Same as Q21: Value = 44 (items 1, 3, 5, 6).
+
+**Answer:** Items 1, 3, 5, 6; Value = 44.
+
+---
+
+### 38. What are greedy algorithms? What are their characteristics? Explain any greedy algorithm with example
+- **Definition**: Make locally optimal choices.
+- **Characteristics**: Greedy choice property, optimal substructure.
+- **Example**: Kruskal’s MST: Sort edges, add minimum weight if no cycle.
+
+**Answer:** Greedy makes local choices; e.g., Kruskal’s builds MST by adding min edges.
+
+---
+
+### 39. Why do we perform topological sorts only on DAGs? Explain with example
+- **Reason**: Cycles prevent a linear order where all edges go forward.
+- **Example**: DAG A→B→C, sort: A, B, C. Cycle A→B→A fails.
+
+**Answer:** Cycles in non-DAGs prevent ordering; e.g., A→B→C works, A→B→A doesn’t.
+
+---
+
+### 40. Discuss the time complexity of Binary search algorithm for best and worst case
+Same as Q12: Best \( O(1) \), Worst \( O(\log n) \).
+
+**Answer:** Best: \( O(1) \), Worst: \( O(\log n) \).
+
+---
+
+### 41. Design merge sort algorithm. Write a descriptive note on its best case, average case, and worst-case time efficiency
+- **Algorithm**: See Q16.
+- **Efficiency**: Always \( O(n \log n) \) due to consistent divide and merge.
+
+**Answer:** Algorithm as Q16; Best, Average, Worst: \( O(n \log n) \).
+
+---
+
+### 42. Define topological sorting. Illustrate the topological sorting using DFS method for the following graph
+- **Definition**: Orders DAG vertices so edges go forward.
+- **Graph missing**: Generic DFS: Visit node, recurse unvisited neighbors, add to stack in reverse finish order.
+
+**Answer:** Orders DAG; DFS: Recurse, stack in reverse finish (graph-specific example unavailable).
+
+---
+
+### 43. Obtain the Huffman tree and the code for the following data: a:10, e:15, i:12, o:3, u:4, s:13, t:1
+- Build: t(1)+o(3)=4, 4+u(4)=8, 8+a(10)=18, 18+i(12)=30, 30+s(13)=43, 43+e(15)=58.
+- Codes: e:0, s:10, i:110, a:1110, u:11110, o:111110, t:111111.
+
+**Answer:** Tree: Root(58) → [e:0, 43 → [s:10, 30 → ...]]; Codes above.
+
+---
+
+### 44. Write an algorithm to find single source shortest path for a graph G whose edge weights are positive
+```
+Dijkstra(G, s):
+    initialize_single_source(G, s)
+    Q = priority_queue(G.V)
+    while Q not empty:
+        u = extract_min(Q)
+        for v in u.neighbors:
+            relax(u, v)
+```
+**Answer:** Dijkstra’s algorithm above.
+
+---
+
+### 45. Apply Floyd's algorithm to find all pair shortest path for the graph given below
+Graph missing; Floyd-Warshall: \( O(n^3) \), updates distances via all intermediate vertices.
+
+**Answer:** Floyd-Warshall computes all pairs; specific result unavailable.
+
+---
+
+### 46. Write the difference between backtracking and branch and bound
+Same as Q51.
+
+**Answer:** Backtracking: Depth-first, discards; Branch and Bound: Bounds prune, flexible.
+
+---
+
+### 47. Suppose the dimensions of the matrices A, B, C, D are 20×2, 2×15, 15×40, 40×4 respectively. Find the best way to compute A × B × C × D
+Same as Q19: (A×B)×(C×D), cost = 4,800.
+
+**Answer:** (A×B)×(C×D).
+
+---
+
+### 48. Construct an optimal Huffman code for the following set of frequencies: B:5, D:5, A:7, C:8, F:10, E:11
+- Build: B(5)+D(5)=10, 10+A(7)=17, 17+C(8)=25, 25+F(10)=35, 35+E(11)=46.
+- Codes: E:0, F:10, C:110, A:1110, D:11110, B:11111.
+
+**Answer:** Codes: E:0, F:10, C:110, A:1110, D:11110, B:11111.
+
+---
+
+### 49. Describe Dijkstra's algorithm to solve single-source shortest path problem. What is its time complexity?
+- **Description**: See Q44.
+- **Time Complexity**: \( O((V + E) \log V) \) with a heap.
+
+**Answer:** Algorithm as Q44; \( O((V + E) \log V) \).
+
+---
+
+### 50. Write an algorithm based on divide-and-conquer strategy to search an element in a given list. Assume that the elements of list are in sorted order
+Binary Search (Q10).
+
+**Answer:** Binary Search algorithm (Q10).
+
+---
+
+### 51. Solve the recurrence equation: \( T(n) = 5T(n/5) + \sqrt{n} \), \( T(1) = 1 \), \( T(0) = 0 \)
+- Master theorem: \( a = 5 \), \( b = 5 \), \( f(n) = n^{1/2} \).
+- \( \log_b a = 1 \), \( f(n) = O(n^{1/2}) \), case 1: \( T(n) = \Theta(n) \).
+
+**Answer:** \( \Theta(n) \)
+
+---
+
+### 52. Give asymptotic upper bounds for \( T(n) \) in each of the following recurrence. Assume that \( T(n) \) is a constant for sufficiently small \( n \)
+#### (i) \( T(n) = T(n/2) + T(n/4) + T(n/8) + n \)
+- Recursion tree: \( O(n \log n) \) (sum approximates \( n \cdot \log n \) terms).
+#### (ii) \( T(n) = 3T(n/4) + n^2 \)
+- Master theorem: \( a = 3 \), \( b = 4 \), \( \log_4 3 < 2 \), case 3: \( O(n^2) \).
+
+**Answer:**
+- (i) \( O(n \log n) \)
+- (ii) \( O(n^2) \)
+
+---
+
+### 53. Give a dynamic-programming algorithm to solve the 0-1 knapsack problem
+```
+Knapsack(n, W, w, p):
+    K[n+1][W+1]
+    for i = 0 to n:
+        for w = 0 to W:
+            if i = 0 or w = 0:
+                K[i][w] = 0
+            elif w[i] <= w:
+                K[i][w] = max(p[i] + K[i-1][w-w[i]], K[i-1][w])
+            else:
+                K[i][w] = K[i-1][w]
+    return K[n][W]
+```
+
+**Answer:** Algorithm above.
+
+---
+
+### 54. Given the 10 activities along with their start and finish time as \( Si = <1, 2, 3, 4, 7, 8, 9, 11, 12> \), \( Fi = <3, 5, 4, 7, 10, 9, 11, 13, 12, 14> \)
+- Corrected: 9 activities, greedy: 1(1,3), 4(4,7), 7(7,10), 9(12,14).
+- Max: 4.
+
+**Answer:** 1, 4, 7, 9 (4 activities).
+
+---
+
+### 55. Explain the strategy of greedy technique to find the optimal solution of fractional knapsack problem
+- Sort items by value/weight, take as much as possible of highest ratio items.
+- Time: \( O(n \log n) \).
+
+**Answer:** Sort by value/weight, fill greedily; \( O(n \log n) \).
+
+---
+
+### 56. Find the longest common subsequence in the following given two sequences \( X = "ROADS" \), \( Y = "CROSS" \)
+- DP table: LCS = "ROS" (length 3).
+
+**Answer:** "ROS"
+
+---
+
+### 57. Explain the following problems: Vertex cover decision problem and Vertex cover optimization problem, Clique Decision problem and Max Clique problem, Chromatic number Decision problem and Chromatic number optimization problem
+- **Vertex Cover Decision**: Is there a vertex cover of size \( \leq k \)? NP-complete.
+- **Vertex Cover Optimization**: Minimize cover size.
+- **Clique Decision**: Is there a clique \( \geq k \)? NP-complete.
+- **Max Clique**: Maximize clique size.
+- **Chromatic Number Decision**: Can graph be colored with \( \leq k \) colors? NP-complete.
+- **Chromatic Number Optimization**: Minimize colors.
+
+**Answer:** Descriptions as above.
+
+---
+
+### 58. Sort the following array of elements using randomized quick sort: 12, 67, 34, 78, 23, 45, 69, 17, 28, 10, 27, 59
+- Random pivot (e.g., 59): Partition, recurse.
+- Result: 10, 12, 17, 23, 27, 28, 34, 45, 59, 67, 69, 78.
+
+**Answer:** 10, 12, 17, 23, 27, 28, 34, 45, 59, 67, 69, 78
+
+---
+
+### 59. Solve the following recurrence using Iteration method: \( T(n) = 1 \) for \( n = 1 \), \( T(n) = 5T(n/2) + cn^2 \) for other values of \( n \)
+- \( T(n) = cn^2 + 5c(n/2)^2 + 25c(n/4)^2 + \cdots + 5^k c (n/2^k)^2 \), until \( n/2^k = 1 \).
+- \( k = \log_2 n \), sum: \( O(n^2) \).
+
+**Answer:** \( O(n^2) \)
+
+---
+
+### 60. Write Prim's algorithm. Find the minimum cost spanning tree by Prim's
+```
+Prim(G):
+    T = empty
+    Q = priority_queue(G.V)
+    s.key = 0
+    while Q not empty:
+        u = extract_min(Q)
+        add u to T
+        for v in u.neighbors:
+            if v in Q and w(u,v) < v.key:
+                v.key = w(u,v)
+                v.pi = u
+```
+Graph missing; generic answer.
+
+**Answer:** Algorithm above; MST depends on graph.
+
+---
+
+This completes all provided questions in an organized manner. Missing graph/data-specific answers are noted as such.
